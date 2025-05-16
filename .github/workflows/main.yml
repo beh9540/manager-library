@@ -16,12 +16,12 @@ jobs:
           pip install -r requirements.txt
       - name: Sphinx build
         run: |
-          sphinx-build doc _build
+          sphinx-build docs _build
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
         with:
-          path: docs/_build/
+          path: _build/
   deploy:
       needs: build
 
